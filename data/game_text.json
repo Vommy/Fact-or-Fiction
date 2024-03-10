@@ -1,0 +1,7 @@
+{
+  "welcome_message": "Welcome to Fact-or-Fiction!",
+  "menu_options": [
+    { "id": "1", "text": "Start new game" },
+    { "id": "2", "text": "Exit game" }
+  ]
+}
