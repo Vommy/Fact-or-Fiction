@@ -17,8 +17,10 @@ src.utilities.print_menu(data["menu_options"])
 #While the user doesn't want to exit the game
 while(True):
     values = src.utilities.menu()
-    game_state.add_question(values["question"])
-    src.utilities.print_menu(data["sub_menu_options"])
+    if(values):
+        print(values)
+        game_state.add_question(values["question"])
+        src.utilities.print_menu(data["sub_menu_options"])
     #If the game is not over
         #Give them a question
         #Let them answer

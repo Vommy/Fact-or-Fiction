@@ -62,6 +62,7 @@ def run_game():
     response_json = response.json()
     context.append(response_json)
     question = print(response_json["content"])
+    question = response_json["content"]
     
     #Let the user answer "true" or "false".
     ans = input("Type true or false:\n")
@@ -77,7 +78,8 @@ def run_game():
     #Get the result back from OPENAI and display it back to the user.
     response = requests.get(url)
     response_json = response.json()
-    result = print(response_json["content"] + "\n")
+    result = response_json["content"]
+    print(response_json["content"] + "\n")
 
     #Store the values back 
     values = {"question" : question, "ans" : result}

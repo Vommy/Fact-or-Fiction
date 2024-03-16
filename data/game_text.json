@@ -10,7 +10,7 @@
   ],
   "initialization": {
     "role": "user",
-    "content": "Generate a fact that is either true or false. I will guess if it is true or false and when I guess, return 'correct' or 'incorrect' first before giving an explanation."
+    "content": "Generate a random statement. This statement can either be true or false. I will guess either 'true' or 'false'. If I input 'false', I am guessing that the statement is ficticious and indeed false. If I guess 'true', I am guessing that the statement is a fact and is indeed true. When you receive my answer, output either 'correct' if I make a correct guess (E>G. guess - true; actual answer - true) or 'incorrect' if my guess is wrong (E.G. guess - false; actual answer - true). After outputting 'correct' or 'incorrect, output the explanation to the statement."
   },
   "err_invalid_option": "Please select a valid option.",
   "err_unavailable_option": "Please select one of the listed options."
