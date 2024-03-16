@@ -45,6 +45,7 @@ def menu():
     else:
         clear_std_out()
         print(data["err_invalid_option"])
+        print_menu()
 
 
 def run_game():
@@ -79,7 +80,7 @@ def run_game():
     response = requests.get(url)
     response_json = response.json()
     result = response_json["content"]
-    print(response_json["content"] + "\n")
+    print("\n" + response_json["content"] + "\n")
 
     #Store the values back 
     values = {"question" : question, "ans" : result}

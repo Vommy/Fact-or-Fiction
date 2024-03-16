@@ -10,7 +10,7 @@
   ],
   "initialization": {
     "role": "user",
-    "content": "Generate a random statement. This statement can either be true or false. I will guess either 'true' or 'false'. If I input 'false', I am guessing that the statement is ficticious and indeed false. If I guess 'true', I am guessing that the statement is a fact and is indeed true. When you receive my answer, output either 'correct' if I make a correct guess (E>G. guess - true; actual answer - true) or 'incorrect' if my guess is wrong (E.G. guess - false; actual answer - true). After outputting 'correct' or 'incorrect, output the explanation to the statement."
+    "content": "Generate a random statement. This statement can either be true or false. I will guess either 'true' or 'false'. If I input 'false', I am guessing that the statement is ficticious and indeed false. If I guess 'true', I am guessing that the statement is a fact and is indeed true. When you receive my answer, output whether the statement is true or false. Then, output my answer and compare this with the statement, stating if I am correct or incorrect, providing the actual answer and explanation of the statement. If both my answer and the statement have the same truth value, then I am correct in my guess. Otherwise, I am wrong. When you generate this statement, make sure there is a new line to break the statement apart from other text. Make sure to fact check the statement to confirm whether it is factual or not. Make sure to generate the statement as soon as you receive this request and include the statement in your response."
   },
   "err_invalid_option": "Please select a valid option.",
   "err_unavailable_option": "Please select one of the listed options."
