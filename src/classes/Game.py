@@ -48,6 +48,7 @@ class Game:
             cls.__is_game_over = False
             cls.__score = 0
             cls.__lives = 3
+            cls.__prevQuestions = []
         return cls.__instance
 
     def get_score(self):
@@ -102,3 +103,10 @@ class Game:
         """
 
         self.__instance = None
+
+    def add_question(self, question):
+        """
+        Keeps track of all the questions that have been asked.
+
+        """
+        self.__prevQuestions.append(question)

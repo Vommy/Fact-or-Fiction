@@ -1,7 +1,17 @@
 {
   "welcome_message": "Welcome to Fact-or-Fiction!",
   "menu_options": [
-    { "id": "1", "text": "Start new game" },
+    { "id": "1", "text": "Start game" },
     { "id": "2", "text": "Exit game" }
-  ]
+  ],
+  "sub_menu_options": [
+    { "id": "1", "text": "Play again" },
+    { "id": "2", "text": "Exit game" }
+  ],
+  "initialization": {
+    "role": "user",
+    "content": "Generate a fact that is either true or false. I will guess if it is true or false and when I guess, return 'correct' or 'incorrect' first before giving an explanation."
+  },
+  "err_invalid_option": "Please select a valid option.",
+  "err_unavailable_option": "Please select one of the listed options."
 }
