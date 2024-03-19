@@ -1,6 +1,7 @@
 from src.classes import Game
 import src.utilities
 import json
+import time
 
 game_state = Game.Game()
 
@@ -20,6 +21,11 @@ while(True):
     if(values):
         game_state.add_question(values["question"])
         src.utilities.print_menu(data["sub_menu_options"])
+    else:
+        print("Resetting game...")
+        time.sleep(5)
+        src.utilities.clear_std_out()
+        src.utilities.print_menu(data["menu_options"])
     #If the game is not over
         #Give them a question
         #Let them answer

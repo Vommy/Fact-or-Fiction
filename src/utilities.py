@@ -50,40 +50,44 @@ def menu():
 
 def run_game():
     #Send the initial request to OPENAI.
-    context = []
-    content = data["initialization"]
-    context.append(content)
+    values = None
+    try:
+        context = []
+        content = data["initialization"]
+        context.append(content)
 
-    url = f"http://localhost:3000/chatgpt-req?content={context}"
+        url = f"http://localhost:3000/chatgpt-req?content={context}"
 
-    #Send the request to OPENAI.
-    response = requests.get(url)
+        #Send the request to OPENAI.
+        response = requests.get(url)
 
-    #Retrieve and parse the question from OPENAI.
-    response_json = response.json()
-    context.append(response_json)
-    question = print(response_json["content"])
-    question = response_json["content"]
-    
-    #Let the user answer "true" or "false".
-    ans = input("Type true or false:\n")
+        #Retrieve and parse the question from OPENAI.
+        response_json = response.json()
+        context.append(response_json)
+        question = print(response_json["content"])
+        question = response_json["content"]
 
-    #Need to perform input sanitization
+        #Let the user answer "true" or "false".
+        ans = input("Type true or false:\n")
 
-    #Send the answer back to OPENAI along with the previous context.
-    content = '{"role": "user", "content": "%s"}' % ans
-    content = json.loads(content)
-    context.append(content)
-    url = f"http://localhost:3000/chatgpt-req?content={context}"
+        #Need to perform input sanitization
 
-    #Get the result back from OPENAI and display it back to the user.
-    response = requests.get(url)
-    response_json = response.json()
-    result = response_json["content"]
-    print("\n" + response_json["content"] + "\n")
+        #Send the answer back to OPENAI along with the previous context.
+        content = '{"role": "user", "content": "%s"}' % ans
+        content = json.loads(content)
+        context.append(content)
+        url = f"http://localhost:3000/chatgpt-req?content={context}"
 
-    #Store the values back 
-    values = {"question" : question, "ans" : result}
-    
-    return values
+        #Get the result back from OPENAI and display it back to the user.
+        response = requests.get(url)
+        response_json = response.json()
+        result = response_json["content"]
+        print("\n" + response_json["content"] + "\n")
+
+        #Store the values back 
+        values = {"question" : question, "ans" : result}
+    except:
+        print("An error occurred while running the game.")
+    finally:
+        return values
 
